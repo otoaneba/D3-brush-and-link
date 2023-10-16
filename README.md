@@ -1,28 +1,26 @@
-# Programming Assignment 4: Brushing and Linking
+# Brushing and Linking
 
-### Instructions
+###
+Recreate a version of the charts from [Nadieh Bremer's Urbanization in East Asia narrative visualization](http://nbremer.github.io/urbanization/).
 
-In this assignment you will create a version of the charts from [Nadieh Bremer's Urbanization in East Asia narrative visualization](http://nbremer.github.io/urbanization/). We highly recommend going through this visualization as a great example of storytelling and to learn more about the dataset.
-
-In this assignment you will create multiple coordinated charts. You will create 6 total subplots. Your submission should include a bar chart and a dot histogram for each of the following urbanization measures:
+Create multiple coordinated charts with 6 total subplots. The chart includes a bar chart and a dot histogram for each of the following urbanization measures:
 * urban land (in sq. km)
 * urban population
 * urban population density (in persons/sq. km)
 
-The bar charts should compare the 2000 and 2010 metrics for each country. While the histograms should show the distribution of the percent growth for each city (Note: percent growth is already calculated for all three metrics). Your final chart will look like this:
+The bar charts compares the 2000 and 2010 metrics for each country. While the histograms shows the distribution of the percent growth for each city (Note: percent growth is already calculated for all three metrics). Example of the final code:
 
 ![Lab Result](img/p4_brush_and_link.jpeg)
 
-Your subplots will also need to support coordinated interactions for brushing and linking. First, your dot histogram charts will have brushing in the x-direction. The brush will highlight the selected cities from that histogram in the other 2 histograms. Note that only one brush can be active at a time, so you will have to save the state of the active brush. The interaction should look like this:
+The subplots supports coordinated interactions for brushing and linking; Dot histogram charts have brushing in the x-direction. The brush highlights the selected cities from that histogram in the other 2 histograms. Note that only one brush can be active at a time.
 
 ![Lab Result](img/p4_brush_example.gif)
 
-Next, your submission should include linking from the bar charts to the histogram plots. Since the bar charts display all of the East Asian countries, you will use `mouseover` and `mouseout` events (aka hovering) to trigger a linked highlighting in all other views. The dots in the histogram should be highlighted if they are the same country, and the grouped bars of that country in the other 2 bar charts should be highlighted as well. The interaction should look like this:
+Linking from the bar charts to the histogram plots. The charts use `mouseover` and `mouseout` events (aka hovering) to trigger a linked highlighting in all other views. The dots in the histogram should be highlighted if they are the same country, and the grouped bars of that country in the other 2 bar charts should be highlighted as well. The interaction would look like this:
 
 ![Lab Result](img/p4_link_example.gif)
 
-You will use the dataset at `./data/asia_urbanization.csv` to re-create the Urbanization in East Asia interactive visualization. **Use the above relative path when calling `d3.csv()`. We will deduct 2 points if you do not use a proper relative path.**
-
+This uses the dataset at `./data/asia_urbanization.csv` to re-create the Urbanization in East Asia interactive visualization.
 
 Here is a snippet of the dataset:
 
@@ -72,37 +70,3 @@ You will create this interactive chart using D3's Brush tool. We will cover how 
 * [Bostock's Brush Bl.ock](https://bl.ocks.org/mbostock/34f08d5e11952a80609169b7917d4172)
 * [Brush in Scatterplot Matrix. v3, but still relevant](https://bl.ocks.org/mbostock/4063663)
 
-> Reminder that this is an individual assignment. The code you turn in should be your own creation. You are certainly welcome to seek assistance from the TAs as you work on the assignment, however.
-
-### Starter code
-
-All of the starter code for the Programming Assignments can be found at the [HW Github Repository](https://github.gatech.edu/CS4460-Spring2018/Homework). `git clone` this repository for this assignments starter code. You will need to `git pull` for all future starter code.
-
-**You are required to use the starter code for all programming assignments.**
-
-### What to turn in
-
-You will submit your code via T-Square. Compress your code (the `04_brush_and_link` directory) into a zip file. Upload and submit this zip file via T-Square.
-
-### Deadline
-
-Your zipped code should be submitted to T-Square by **11:55 PM on Thursday, April 19th.**
-
-### Grading
-
-This assignment will be graded out of a 100 point scale. If your D3 code does all of the following you will receive all 100 points:
-
-1. Creates 6 total subplots. 1 grouped bar chart, and 1 dot histogram for each of the 3 urbanization measures. All charts follow the data-bindings in the above "Data-Bindings " section.
-2. The dot histogram subplots support x-direction brushing between plots. Only one brush can be active at a time.
-3. The grouped bar charts support "on-hover" linking to all other charts. When hovering over a group of 2 bars, the same country will be highlighted on the other 2 bar charts and all cities from that country will be highlighted on the dot histograms.
-4. The entire visualization is contained within one SVG element.
-5. You are required to add a title, labels, legends, and axes to all charts.
-
-You will not **lose points** on any of the following:
-
-1. The styling of the chart, grids, axes, legends or labels
-2. The number of ticks in the axes
-3. The number of bins used in the histogram, but all dots should still be legible
-4. The number of bins used in the color scales
-5. Conventions or legibility of your code
-6. Handling any other datasets than `./data/asia_urbanization.csv`
